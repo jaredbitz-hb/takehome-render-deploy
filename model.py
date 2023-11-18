@@ -28,7 +28,7 @@ class Reservation(db.Model):
 
 def connect_to_db(app):
     with app.app_context():
-        POSTGRES_DB_URL = "postgresql:///melon_scheduler"
+        POSTGRES_DB_URL = os.environ['POSTGRES_URL']
         
         app.config['SQLALCHEMY_DATABASE_URI'] = POSTGRES_DB_URL
         app.config['SQLALCHEMY_ECHO'] = False
