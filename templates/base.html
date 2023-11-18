@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Melon Scheduler</title>
+</head>
+
+<body>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+    </div>
+    <div>
+        {% if 'user_id' in session %}
+        <p>Logged in as {{ session['user_email'] }}</p>
+        <p><a href="/search">Book a new appointment</a></p>
+        <p><a href="/my_reservations">View your appointments</a></p>
+        {% endif %}
+    </div>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

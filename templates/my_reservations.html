@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Your reservations</h1>
+<ul>
+    {% for res in reservations %}
+        <li>
+            {{res.time}} 
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
